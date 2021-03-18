@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "./contexts/AuthContext"
 import { Link } from "react-router-dom"
+import NavBar from "./NavBar"
 
 export default function ForgotPassword() {
   const emailRef = useRef()
@@ -28,6 +29,8 @@ export default function ForgotPassword() {
 
   return (
     <>
+    <NavBar>
+    </NavBar>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Password Reset</h2>

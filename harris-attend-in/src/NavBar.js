@@ -10,18 +10,18 @@ export default function NavBar() {
   return (
     <>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">nav bar</Navbar.Brand>
+        <Navbar.Brand href="/">Attend-In</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="mr-auto">
-            <Nav.Link href="#home">home</Nav.Link>
-            <Nav.Link href="#foo">foo</Nav.Link>
-            <NavDropdown title="Dropdown">
-              <NavDropdown.Item href="#action/1">action 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2">action 2</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3">action 3</NavDropdown.Item>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/attendance">Attendance</Nav.Link>
+            <NavDropdown title="Courses">
+              <NavDropdown.Item href="#action/1">Course 1</NavDropdown.Item>
+              <NavDropdown.Item href="#action/2">Course 2</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3">Course 3</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/4">action 4</NavDropdown.Item>
+              <NavDropdown.Item href="#action/4">Course Registration</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form inline>
