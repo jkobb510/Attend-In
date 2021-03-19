@@ -17,11 +17,11 @@ export default function NavBar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/attendance">Attendance</Nav.Link>
             <NavDropdown title="Courses">
-              <NavDropdown.Item href="#action/1">Course 1</NavDropdown.Item>
+              <NavDropdown.Item href="/class-list">Course 1</NavDropdown.Item>
               <NavDropdown.Item href="#action/2">Course 2</NavDropdown.Item>
               <NavDropdown.Item href="#action/3">Course 3</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/4">Course Registration</NavDropdown.Item>
+              <NavDropdown.Item href="course-info">Courses Page</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form inline>

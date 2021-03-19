@@ -9,9 +9,9 @@ export default function CourseInfo(){
     <NavBar>
     </NavBar>
     <Card.Body>
-      <h2 className="text-center mb-4">Course Page</h2>
+        <h2 className="text-center mb-4">Course Page</h2>
     </Card.Body>
-      <Card>
+    <Card>
         <Card.Header>CSC 4680</Card.Header>
         <Card.Body>
           <Card.Title>Course 1</Card.Title>
@@ -20,15 +20,15 @@ export default function CourseInfo(){
             Time: Tu/Th 10:30-11:50
             Location: 420 Park Place, Room 350
           </Card.Text>
-          <Button variant="primary">
+          <Button variant="primary" href = "/attendance">
               Attendance
-            </Button>
-            <Button variant="primary" href = "/class-list">
+          </Button>
+          <Button variant="primary" href = "/class-list">
               Class list
-            </Button>
-            <Button variant="primary">
+          </Button>
+          <Button variant="primary">
               Invite
-            </Button>
+          </Button>
         </Card.Body>
       </Card>
       <Card.Body>
