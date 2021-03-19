@@ -10,7 +10,7 @@ export default function CourseInfo(){
     </NavBar>
     <Card.Body>
       <h2 className="text-center mb-4">Course Page</h2>
-      </Card.Body>
+    </Card.Body>
       <Card>
         <Card.Header>CSC 4680</Card.Header>
         <Card.Body>

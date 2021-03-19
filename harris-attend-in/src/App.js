@@ -9,8 +9,9 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
-import Classlist from "./Classlist"
+import ClassList from "./ClassList"
 import CourseInfo from "./CourseInfo"
+import Attendance from "./Attendance"
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />
-            <Route path="/class-list" component={Classlist}/>
+            <Route path="/class-list" component={ClassList}/>
             <Route path="/course-info" component={CourseInfo}/>
+            <Route path="/attendance" component={Attendance}/>
           </Switch>
         </AuthProvider>
       </Router>
