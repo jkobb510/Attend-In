@@ -66,6 +66,7 @@ class CustomStyle extends Component {
             CHECK IN
         </Button>
 
+            <a href="./Login" id="cancel" name="cancel" class="btn btn-default"><b>Cancel</b></a>
       </div>
     </div>
     </div>

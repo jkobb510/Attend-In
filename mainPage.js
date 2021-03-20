@@ -50,7 +50,7 @@ class CustomStyle extends Component {
           CSC 4888
         </Button>
       </div>
-
+      <a href="./Login" id="cancel" name="cancel" class="btn btn-default"><b>Cancel</b></a>
       </div>
     );
   }
