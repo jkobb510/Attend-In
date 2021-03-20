@@ -3,6 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button }from "react-bootstrap";
 import NavBar from "./NavBar";
 import { CardDeck } from "reactstrap";
+import { CardView } from 'react-card-with-image'
+import 'react-card-with-image/dist/index.css'
+import profile from "./profile_default.png"
+
+const items = [
+    {
+        image: profile
+    }
+]
 
 export default function Attendance(){
     return(
@@ -15,7 +24,11 @@ export default function Attendance(){
         <CardDeck className = "bg-dark" style ={{ width: '60rem', display: "flex", flexdirection: "row" }}>
             <Card className="bg-success" style={{ width: '20rem', flex:1, display:'inline-block' }}>
                 <Card.Body>
-                    <Card.Img variant="top" src="holder.js/10px10?text=Profile pic" />
+                <CardView 
+                    items = { items }
+                    imageHeight='80px'
+                    imageWidth='80px'
+                />
                     <Card.Text>
                         Student 1
                     </Card.Text>
@@ -23,7 +36,11 @@ export default function Attendance(){
             </Card>
             <Card className="bg-danger" style={{ width: '20rem', flex:1, display:'inline-block' }}>
                 <Card.Body>
-                    <Card.Img variant="top" src="holder.js/50px50?text=Profile pic" />
+                <CardView 
+                    items = { items }
+                    imageHeight='80px'
+                    imageWidth='80px'
+                />
                     <Card.Text>
                         Student 2
                     </Card.Text>
@@ -31,7 +48,11 @@ export default function Attendance(){
             </Card>
             <Card className="bg-success" style={{ width: '20rem', flex:1, display:'inline-block' }}>
                 <Card.Body  className="bg-Success">
-                    <Card.Img variant="top" src="holder.js/50px50?text=Profile pic" />
+                <CardView 
+                    items = { items }
+                    imageHeight='80px'
+                    imageWidth='80px'
+                />
                     <Card.Text>
                         Student 3
                     </Card.Text>
@@ -39,7 +60,11 @@ export default function Attendance(){
             </Card>
             <Card className="bg-success" style={{ width: '20rem', flex:1, display:'inline-block' }}>
                 <Card.Body  className="bg-Success">
-                    <Card.Img variant="top" src="holder.js/50px50?text=Profile pic" />
+                <CardView 
+                    items = { items }
+                    imageHeight='80px'
+                    imageWidth='80px'
+                />
                     <Card.Text>
                         Student 4
                     </Card.Text>
@@ -47,7 +72,11 @@ export default function Attendance(){
             </Card>
             <Card className="bg-success" style={{ width: '20rem', flex:1, display:'inline-block' }}>
                 <Card.Body  className="bg-Success">
-                    <Card.Img variant="top" src="holder.js/50px50?text=Profile pic" />
+                <CardView 
+                    items = { items }
+                    imageHeight='80px'
+                    imageWidth='80px'
+                />
                     <Card.Text>
                         Student 5
                     </Card.Text>
@@ -55,7 +84,11 @@ export default function Attendance(){
             </Card>
             <Card className="bg-success" style={{ width: '20rem', flex:1, display:'inline-block' }}>
                 <Card.Body  className="bg-Success">
-                    <Card.Img variant="top" src="holder.js/50px50?text=Profile pic" />
+                <CardView 
+                    items = { items }
+                    imageHeight='80px'
+                    imageWidth='80px'
+                />
                     <Card.Text>
                         Student 6
                     </Card.Text>
