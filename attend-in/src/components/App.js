@@ -8,6 +8,7 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
+import NavBar from "./NavBar"
 
 function App() {
   console.log(process.env.YOUR_ENV_KEY)
@@ -26,6 +27,10 @@ function App() {
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
+
+              <Route path="/navbar" component={NavBar} />
+
+
             </Switch>
           </AuthProvider>
         </Router>
