@@ -8,6 +8,7 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
+import NavBar from "./NavBar"
 
 // samson
 import addCoursePage from "./addCoursePage"
@@ -49,6 +50,10 @@ function App() {
               <Route path="/attendance" component={Attendance}/>
 
               <Route path="/forgot-password" component={ForgotPassword} />
+
+              <Route path="/navbar" component={NavBar} />
+
+
             </Switch>
           </AuthProvider>
         </Router>
