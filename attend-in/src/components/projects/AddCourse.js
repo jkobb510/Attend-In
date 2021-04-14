@@ -4,8 +4,11 @@ import { addStudentCourse } from '../../store/actions/courseActions'
 import { addTeacherCourse } from '../../store/actions/courseActions'
 import { Redirect } from 'react-router-dom'
 import firebase from 'firebase/app';
+import { ToastProvider, useToasts } from 'react-toast-notifications';
+
 
 class AddCourse extends Component {
+  
   state = {
     courseId: '',
     studentId: this.props.auth.uid
@@ -29,11 +32,13 @@ class AddCourse extends Component {
             this.props.addTeacherCourse(this.state);
           })
       })
+
     e.preventDefault();
    this.props.history.push('/add');
   }
   render() {
     const { auth } = this.props;
+
     if (!auth.uid) return <Redirect to='/signin' />
     return (
       <div className="container">

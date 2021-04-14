@@ -3,7 +3,7 @@ export const createProject = (project) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
     const authorId = getState().firebase.auth.uid;
-    debugger
+    
     firestore.collection('classes').add({
       ...project,
       authorFirstName: profile.firstName,

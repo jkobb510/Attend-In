@@ -1,6 +1,9 @@
+
 const initState = {}
 
 const courseReducer = (state = initState, action) => {
+
+
   switch (action.type) {
     case 'CREATE_COURSE_SUCCESS':
       console.log('create course success');

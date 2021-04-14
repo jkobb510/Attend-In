@@ -7,10 +7,10 @@ import moment from 'moment'
 
 
 
-const StudentClassDetails = (props) => {
-  const { studentClasses, auth } = props;
+const TeacherClassDetails = (props) => {
+  const { teacherClasses, auth } = props;
   if (!auth.uid) return <Redirect to='/signin' />
-  if (studentClasses) {
+  if (teacherClasses) {
     return (
       <div className="container section project-details">
         <div className="card z-depth-0">
@@ -38,8 +38,8 @@ const mapStateToProps = (state, ownProps) => {
   // console.log(state);
   
   const id = ownProps.match.params.id;
-  const studentClasses = state.firestore.data.studentClasses;
-  const sClass = studentClasses
+  const teacherClasses = state.firestore.data.teacherClasses;
+  const sClass = teacherClasses
   return {
     classes: sClass,
     auth: state.firebase.auth
@@ -49,6 +49,6 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([{
-    collection: 'studentClasses'
+    collection: 'teacherClasses'
   }])
-)(StudentClassDetails)
+)(TeacherClassDetails)

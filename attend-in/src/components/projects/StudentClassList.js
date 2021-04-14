@@ -8,6 +8,8 @@ import firebase from 'firebase/app';
 
 
 const StudentClassList = ({courses}) => {
+  console.log(courses)
+
   return (
     <div className="project-list section">
       { courses && courses.map(course => {

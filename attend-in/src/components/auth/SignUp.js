@@ -12,7 +12,7 @@ class SignUp extends Component {
     role: '',
   }
   handleChange = (e) => {
-    debugger
+    
     this.setState({
       [e.target.id]: e.target.value
     })
