@@ -7,15 +7,41 @@ import { Link } from 'react-router-dom'
 import firebase from 'firebase/app';
 
 
-const TeacherClassList = ({courses}) => {
-  console.log(courses)
+const TeacherClassList = ({courses, teacherClasses, auth}) => {
+
+
+  console.log('courses',courses)
+  console.log('teacherClasses',teacherClasses)
+
+  var courseList = []
+
+if( !! courses && !! teacherClasses && !! auth )
+  courses.forEach(course => {
+    teacherClasses.forEach(SC => { 
+      // Get all users out of studentClasses
+      if( SC.courseId == course.id && SC.studentId == auth.uid)
+        courseList.push(course)      
+    })
+  });
+
+
+  // if( !! courses && !! studentClasses && !! auth ) {
+  
+  //   courses.forEach(course => {
+  //     teacherClasses.forEach(SC => { 
+  //       // Get all users out of studentClasses
+  //       if( SC.courseId == course.id && SC.studentId == auth.uid)
+  //         courseList.push(course)      
+  //     })
+  //   });
+  // }
+
 
   return (
     <div className="project-list section">
-      { courses && courses.map(course => {
-        console.log(course)
+      { courseList && courseList.map(course => {
         return (
-            <ClassSummary course={course} />
+            <ClassSummary key={course.courseName} course={course} />
         )
       })}
     </div>

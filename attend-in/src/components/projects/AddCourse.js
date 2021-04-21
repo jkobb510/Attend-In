@@ -19,16 +19,14 @@ class AddCourse extends Component {
     })
   }
   handleSubmit = (e) => {
-    console.log(this.state.courseId)
-    console.log(this.props.profile.role.toLowerCase() )
     firebase.firestore().collection("courses").where("code", "==", this.state.courseId)
       .get()
       .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             this.state.courseId = doc.id
-           if( this.props.profile.role.toLowerCase() == 'student' )
+           if( this.props.profile.role.toLowerCase() === 'student' )
             this.props.addStudentCourse(this.state);
-          if( this.props.profile.role.toLowerCase() == 'teacher' )
+          if( this.props.profile.role.toLowerCase() === 'teacher' )
             this.props.addTeacherCourse(this.state);
           })
       })
@@ -49,7 +47,7 @@ class AddCourse extends Component {
             <label htmlFor="courseId">Course Code</label>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1">Add</button>
+            <button className="glow-on-hover">Add</button>
           </div>
         </form>
       </div>

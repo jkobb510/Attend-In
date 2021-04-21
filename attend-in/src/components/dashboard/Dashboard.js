@@ -11,27 +11,29 @@ import { reduxFirestore, getFirestore } from 'redux-firestore';
 import TeacherClassList from '../projects/TeacherClassList'
 
 
-
 class Dashboard extends Component {
   render() {
+    
     const { projects, auth, notifications, studentClasses, teacherClasses, courses, profile } = this.props;
-
 
 
     if (!auth.uid) return <Redirect to='/signin' />
     console.log('auth',profile)
     console.log('studentClasses',courses)
     if ( !! profile && !! profile.role  ) {
-      if ( profile.role.toLowerCase() == 'student' ) {
+      if ( profile.role.toLowerCase() === 'student' ) {
       // STUDENT RETURN
         return (
-          <div className="dashboard container square">
-            <p>HEY mom FROM STUDENT</p>
+          <div className="dashboard container">
+              <h3>Student Dashboard</h3>
             <div className="row">
               <div className="projectsContainer col s12 m7">
 
-                {/* <ProjectList projects={projects} /> */}
-                <StudentClassList courses={courses} />
+                <StudentClassList 
+                auth={auth}
+                courses={courses} 
+                studentClasses={studentClasses}
+                />
 
               </div>
               <div className="col s12 m4 offset-1">
@@ -42,17 +44,20 @@ class Dashboard extends Component {
         )
       }
 
-      else if ( profile.role.toLowerCase() == 'teacher') {
+      else if ( profile.role.toLowerCase() === 'teacher') {
         // TEACHER RETURN
           return (
             
             <div className="dashboard container">
-              <p>HEY mom FROM TEACHER</p>
+              <h3>Teacher Dashboard</h3>
               <div className="row">
                 <div className="projectsContainer col s12 m7">
     
-                  {/* <ProjectList projects={projects} /> */}
-                  <TeacherClassList courses={courses} />
+                  <TeacherClassList 
+                  auth={auth}
+                  courses={courses} 
+                  teacherClasses={teacherClasses}
+                  />
     
                 </div>
                 <div className="col s12 m4 offset-1">
@@ -64,46 +69,14 @@ class Dashboard extends Component {
         }
     }
 
-    else return ( <div> </div> )
+    else return ( <div>     <div><p> </p></div>  </div> )
 
   }
 }
 
 
 const mapClasses = (state) => {
-  var classes = []
-  var userId = state.firebase.auth.uid
-  var table = !! state.firebase.profile.role ? state.firebase.profile.role.toLowerCase() + 'Classes' : null
-  console.log(state)
-  console.log(table)
-  debugger
-  if( !!userId && !! table) {
-    console.log('ALKSJDKALSJDLKAS', userId)
-  console.log('mapClasses',state)
-  var db = getFirestore();
-
-
-  db.collection(table)
-    .where("studentId", "==", userId)
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data());
-            classes.push(doc.data())
-        });
-    }).then(() => {
-      if(table == 'teacherClasses')
-        return {
-          teacherClasses:classes
-        }
-      else 
-        return {
-          studentClasses:classes
-        }
-      })
-    }
-
-
+ return { state }
 }
 
 
@@ -120,7 +93,6 @@ const mapStateToProps = (state) => {
 
   }
 }
-
 
 
 export default compose(

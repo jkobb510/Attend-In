@@ -9,6 +9,11 @@ import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 import AddCourse from './components/projects/AddCourse'
 import AddAttendanceRecord from './components/projects/AddAttendanceRecord'
+import AttendanceTaking from './components/projects/AttendanceTaking'
+import AdminPanel from './components/projects/AdminPanel'
+import ViewClass from './components/projects/ViewClass'
+import ViewClassList from './components/projects/ViewClassList'
+
 
 
 class App extends Component {
@@ -26,8 +31,14 @@ class App extends Component {
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
             <Route path='/add' component={AddCourse} />
-            <Route path='/attendanceSuccess' component={Dashboard} />
+            <Route exact path='/attendanceSuccess' component={Dashboard} />
             <Route path='/attendance/' component={AddAttendanceRecord} />
+            <Route path='/admin' component={AdminPanel} />
+
+            <Route path='/teacherAttendance/' component={AttendanceTaking} />
+            <Route path='/:id/view' component={ViewClass} />
+            <Route path='/:id/list' component={ViewClassList} />
+
           </Switch>
         </div>
       </BrowserRouter>

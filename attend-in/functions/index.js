@@ -10,22 +10,6 @@
 //     .then(doc => console.log('notification added', doc));
 // });
 
-
-// exports.projectCreated = functions.firestore
-//   .document('projects/{projectId}')
-//   .onCreate(doc => {
-
-//     const project = doc.data();
-//     const notification = {
-//       content: 'Added a new project',
-//       user: `${project.authorFirstName} ${project.authorLastName}`,
-//       time: admin.firestore.FieldValue.serverTimestamp()
-//     }
-
-//     return createNotification(notification);
-
-// });
-
 // exports.userJoined = functions.auth.user()
 //   .onCreate(user => {
 

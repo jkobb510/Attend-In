@@ -1,10 +1,6 @@
 export const checkIn = (blob) => {
+  console.warn('ATTEND_COURSE_SUCCESS')
   return (dispatch, getState, {getFirestore}) => {
-
-    console.log(new Date().getDay() )
-    console.log(new Date() )
-
-
     const firestore = getFirestore();
     firestore.collection('attendance').doc( blob.courseId + blob.studentId + new Date().getDay() ).set({
       courseId: blob.courseId,
